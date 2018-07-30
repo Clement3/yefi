@@ -1,7 +1,7 @@
 {
   "name": "yefi",
   "version": "1.0.0",
-  "description": "",
+  "description": "A starter template with Express and TypeScript",
   "main": "build/server.js",
   "scripts": {
     "build": "tsc",
