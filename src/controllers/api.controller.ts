@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 
-class ApiController {
-    index(req: Request, res: Response) {
+class ApiController 
+{
+    public index(req: Request, res: Response) {
         res.json({'content':'Hello World!'});
     }
 }

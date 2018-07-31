@@ -1,15 +1,18 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 import webRoutes from './routes/web';
 import apiRoutes from './routes/api';
 
 class App {
 
     public app: express.Application;
-    
+    public mongoUrl: string = 'mongodb://localhost/yefi';  
+
     constructor() {
         this.app = express();
         this.config();
+        this.mongoSetup();
     }
     
     private config(): void {
@@ -19,6 +22,11 @@ class App {
         this.app.use('/', webRoutes);
         this.app.use('/api', apiRoutes);
     }
+
+    private mongoSetup(): void{
+        mongoose.Promise = global.Promise;
+        mongoose.connect(this.mongoUrl);    
+    }    
 }
 
 export default new App().app;
