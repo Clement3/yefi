@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 class HelloController 
 {
     public index(req: Request, res: Response) {
-        res.send('Hello, World!');
+        res.render('index', { message: 'Hello World!' });
     }
 }
 
